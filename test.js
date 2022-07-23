@@ -33,6 +33,11 @@ function gaussJacobi() {
 
     var b = [v00, v01]
 
+    // if (b || A == NaN) {
+    //     alert("Insira os valores.")
+    //     return 0;
+    // }
+
     var X = new Array();
     var x = new Array();
     for (var k = 0; k < b.length; k++) {
@@ -40,7 +45,7 @@ function gaussJacobi() {
     }
 
     var E = 0.00001; //Precisão
-    var m = 100; //Numero máximo de iterações
+    var m = 500; //Numero máximo de iterações
     var ni = 0; //Contador de iterações
     var continuar = true;
 
