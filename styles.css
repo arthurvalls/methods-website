@@ -70,7 +70,7 @@ input {
     margin-left: 28rem;
 }
 
-.button-36 {
+.button-choose {
     background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
     border-radius: 8px;
     border-style: none;
@@ -91,13 +91,13 @@ input {
     touch-action: manipulation;
 }
 
-.button-36:hover {
+.button-choose:hover {
     box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
     transition-duration: .1s;
 }
 
 @media (min-width: 768px) {
-    .button-36 {
+    .button-choose {
         padding: 0 2.6rem;
     }
 }
@@ -105,7 +105,7 @@ input {
 
 /* CSS */
 
-.button-40 {
+.button-calculate {
     background-color: #111827;
     border: 1px solid transparent;
     border-radius: .75rem;
@@ -130,18 +130,18 @@ input {
     width: auto;
 }
 
-.button-40:hover {
+.button-calculate:hover {
     background-color: #374151;
 }
 
-.button-40:focus {
+.button-calculate:focus {
     box-shadow: none;
     outline: 2px solid transparent;
     outline-offset: 2px;
 }
 
 @media (min-width: 768px) {
-    .button-40 {
+    .button-calculate {
         padding: .75rem 1.5rem;
     }
 }
