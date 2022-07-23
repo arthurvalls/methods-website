@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="test.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body class="body"></body>
+
+<a href="index.html">
+    <h1>
+        <button class="button-40" role="button">Método de Jacobi</button>
+    </h1>
+</a>
+<p1 class="description">
+    O método de Jacobi é um algoritmo para resolver sistemas de equações lineares. Trata-se de uma versão simplificada do algoritmo de valores próprios de Jacobi. O método tem o nome do matemático Alemão Carl Gustav Jakob Jacobi. O método iterativo de Jacobi
+    é um método clássico que data do final do século XVIII. Técnicas iterativas são raramente utilizadas para solucionar sistemas lineares de pequenas dimensões, já que o tempo requerido para obter um mínimo de precisão ultrapassa o requerido pelas técnicas
+    diretas como a eliminação gaussiana. Contudo, para sistemas grandes, com grande porcentagem de entradas de zero (sistemas esparsos), essas técnicas aparecem como alternativas mais eficientes. Sistemas esparsos de grande porte frequentemente surgem
+    na análise de circuitos, na solução numérica de problemas de valor de limite e equações diferenciais parciais.
+</p1>
+<div class="container">
+    <label> Matriz: 
+    <form method="POST" id="inputField" role="form">
+        <input type="text" id="matrix00" value=""> 
+        <input type="text" id="matrix01" value="">
+        
+        
+        <input type="text" id="matrix10" value="">
+        <input type="text" id="matrix11" value="">
+        
+        <br>
+        <input  type="button" onclick="gaussJacobi()" value="calculate" name="calculate" class="btn btn-info">
+      </form>
+      </label>
+    <label> Vetor: 
+        <form id="inputField" role="form">
+            <input type="text" id="array00" value="">
+            <input type="text" id="array01" value="">
+            <br>
+            <button  type="button" onclick="gaussJacobi()" id="calculate">
+                Calcular
+                </button>
+          </form>
+          </label>
+</div>
+
+</body>
+
+</html>
