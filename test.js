@@ -66,5 +66,6 @@ function gaussJacobi() {
         }
         ni = ni + 1;
     }
-    alert("O resultado é : [" + X[0] + ", " + X[1] + "]");
+
+    document.getElementById('result').innerHTML = "O resultado é : [" + X[0] + ", " + X[1] + "]";
 }
