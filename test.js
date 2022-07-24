@@ -124,7 +124,7 @@ function seidel() {
 		x[i] = (b[i] - soma) / A[i][i];
 	    }
 	    // se | x - xo | < Tolerância
-	    if (Math.abs(math.norm(x) - math.norm(X)) < E) {
+	    if (Math.abs(norm(x) - norm(X)) < E) {
 	        continuar = false;
 	    } else {
 	        X=x.slice(0);
