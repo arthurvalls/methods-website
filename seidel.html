@@ -25,7 +25,7 @@
 </p>
 <div class="container">
     <label> Matriz: 
-    <form method="POST" id="inputField" role="form">
+    <form method="POST" id="inputField" role="form" onsubmit = "handleSubmit()">
         <input type="text" id="matrix00" value="" placeholder="A[0][0]"> 
         <input type="text" id="matrix01" value="" placeholder="A[0][1]">
         <!-- <input type="text" id="matrix02" value="" placeholder="A[0][2]"> -->
@@ -41,7 +41,7 @@
       </form>
       </label>
     <label> Vetor: 
-        <form id="inputField" role="form">
+        <form id="inputField" role="form" onsubmit = "handleSubmit()">
             <input type="text" id="array00" value="" placeholder="b[0][0]">
             <input type="text" id="array01" value="" placeholder="b[0][1]">
             <!-- <input type="text" id="array01" value="" placeholder="b[0][1]"> -->
@@ -49,15 +49,15 @@
         </form>
     </label>
     <label> Número de iterações: 
-        <form id="inputField" role="form">
-            <input type="text" id="iter" value="">
+        <form id="inputField" role="form" onsubmit="return false">
+            <input type="text" id="iter" value="" placeholder="">
             <!-- <input type="text" id="array01" value="" placeholder="b[0][1]"> -->
             <br>
         </form>
     </label>
 </div>
 
-<button class="button-calculate" type="button" onclick="seidel()" id="calculate">
+<button class="button-calculate" type="submit" onclick="seidel()" id="calculate">
     Calcular
     </button>
 <br>

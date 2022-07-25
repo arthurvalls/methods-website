@@ -1,3 +1,10 @@
+function handleSubmit(event) {
+    if(!validate()) {
+      event.preventDefault();
+    }
+    return;
+  }
+
 function norm(...numbers) {
 
     max_val = Math.max(...numbers);
