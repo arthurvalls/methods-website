@@ -169,3 +169,30 @@ else document.getElementById('result').innerHTML = "O resultado é : [" + X[0] +
 
 
 
+function f(x,y){
+    return (-1.335) * (y-25);
+
+}
+
+function euler(){
+    var xfinal = parseInt(document.getElementById('final_x').value);
+    var h = parseFloat(document.getElementById('passo').value);
+    var x = parseFloat(document.getElementById('x').value);
+    var y = parseFloat(document.getElementById('y').value);
+    var contador = 0;
+
+    while(xfinal -  x > 0.001){
+        contador = contador + 1;
+
+        x1 = x + h;
+        y1 = y + h*f(x,y);
+        x = x1;
+        y = y1;
+
+    }
+   
+    if(isNaN(y)){
+        document.getElementById('result').innerHTML = "Erro no cálculo."
+    }
+    document.getElementById('result').innerHTML = "O resultado encontrado em " + contador + " iterações foi:\n" + y;
+}

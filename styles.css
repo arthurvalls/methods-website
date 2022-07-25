@@ -51,7 +51,6 @@
 }
 
 label {
-    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     text-align: center;
@@ -73,11 +72,17 @@ input {
     width: 150px;
 }
 
+
 .container {
     display: flex;
     margin: 1rem;
     margin-left: 10rem;
 }
+
+.container-euler{
+    text-align: center;
+}
+
 
 .button-choose {
     text-decoration: none;

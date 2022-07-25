@@ -14,7 +14,7 @@
 
 <a href="index.html">
     <h1>
-        <button class="button-calculate" role="button">Método de Jacobi</button>
+        <button class="button-calculate" role="button">Método de Euler</button>
     </h1>
 </a>
 <p1 class="description">
@@ -26,41 +26,21 @@
 <p class="h2">
     PS: Insira números racionais com . ao invés de , por exemplo: 4.2 . 
 </p>
-<div class="container">
-    <label> Matriz: 
+<div class="container-euler">
     <form method="POST" id="inputField" role="form">
-        <input type="text" id="matrix00" value="" placeholder="A[0][0]"> 
-        <input type="text" id="matrix01" value="" placeholder="A[0][1]">
-        <!-- <input type="text" id="matrix02" value="" placeholder="A[0][2]"> -->
-        
-        <input type="text" id="matrix10" value="" placeholder="A[1][0]">
-        <input type="text" id="matrix11" value="" placeholder="A[1][1]">
-        <!-- <input type="text" id="matrix12" value="" placeholder="A[1][2]"> -->
-
-       <!--  <input type="text" id="matrix20" value="" placeholder="A[2][0]">
-        <input type="text" id="matrix21" value="" placeholder="A[2][1]">
-        <input type="text" id="matrix22" value="" placeholder="A[2][2]"> -->
+        <label>Valor inicial de X: </label><input type="text" id="x" value="" placeholder=""> 
+        <label>Valor inicial de Y: </label><input type="text" id="y" value="" placeholder=""> 
+        <label>Tamanho do passo: </label><input type="text" id="passo" value="" placeholder=""> 
+        <label>Valor final de X:</label><input type="text" id="final_x" value="" placeholder="">
         <br>
-      </form>
-      </label>
-    <label> Vetor: 
-        <form id="inputField" role="form">
-            <input type="text" id="array00" value="" placeholder="b[0][0]">
-            <input type="text" id="array01" value="" placeholder="b[0][1]">
-            <!-- <input type="text" id="array01" value="" placeholder="b[0][1]"> -->
-            <br>
-        </form>
-    </label>
-    <label> Número de iterações: 
-        <form id="inputField" role="form" onsubmit="return false">
-            <input type="text" id="iter" value="">
-            <!-- <input type="text" id="array01" value="" placeholder="b[0][1]"> -->
-            <br>
-        </form>
-    </label>
-</div>
+        <p class="h2">Insira os coeficientes da função Ax+b:</p>
+        <label>Valor de A:</label><input type="text" id="valor_a" value="" placeholder="">
+        <label>Valor de b:</label><input type="text" id="valor_b" value="" placeholder="">
 
-<button class="button-calculate" type="button" onclick="jacobi()" id="calculate">
+    </form>
+</div>
+<br>
+<button class="button-calculate" type="button" onclick="euler()" id="calculate">
     Calcular
     </button>
 <br>
