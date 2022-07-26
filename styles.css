@@ -35,7 +35,6 @@
     color: white;
 }
 
-
 .p {
     text-align: center;
     font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -61,7 +60,7 @@ label {
     text-align: center;
     font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 16px;
-    color: white;
+    color: rgb(219, 194, 173);
 }
 
 input {
@@ -72,17 +71,19 @@ input {
     width: 150px;
 }
 
-
 .container {
     display: flex;
     margin: 1rem;
     margin-left: 10rem;
 }
 
-.container-euler{
+.container-euler {
     text-align: center;
 }
 
+.container-raiz {
+    text-align: center;
+}
 
 .button-choose {
     text-decoration: none;

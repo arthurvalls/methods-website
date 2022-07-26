@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="script.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body class="body"></body>
+
+<a href="index.html">
+    <h1>
+        <button class="button-calculate" role="button">Métodos para encontrar raiz</button>
+    </h1>
+</a>
+<p1 class="description">
+    O método de Gauss-Seidel é um método iterativo para resolução de sistemas de equações lineares. O seu nome é uma homenagem aos matemáticos alemães Carl Friedrich Gauss e Philipp Ludwig von Seidel. É semelhante ao método de Jacobi (e como tal, obedece
+    ao mesmo critério de convergência). É condição suficiente de convergência que a matriz seja estritamente diagonal dominante, i. e., fica garantida a convergência da sucessão de valores gerados para a solução exacta do sistema linear.
+</p1>
+<p class="h2">
+    PS: Insira números racionais com . ao invés de , por exemplo: 4.2 .
+    <br> PS2: Se deseja utilizar uma equação de segundo grau, insira 0 no valor de A.
+</p>
+<div class="container-raiz">
+    <label> Intervalos: 
+    <form method="POST" id="inputField" role="form" onsubmit = "handleSubmit()">
+        <input type="text" id="intervalo1" value="" placeholder=""> 
+        <input type="text" id="intervalo2" value="" placeholder="">
+        
+        <br>
+      </form>
+      </label>
+    <label> Insira coeficientes a, b e c para a equação ax² + bx + c: 
+    <form method="POST" id="inputField" role="form" onsubmit = "handleSubmit()">
+        <input type="text" id="valor_a" value="" placeholder="a"> 
+        <input type="text" id="valor_b" value="" placeholder="b">
+        <input type="text" id="valor_c" value="" placeholder="c">
+        
+        <br>
+      </form>
+      </label>
+</div>
+
+<button class="button-calculate" type="submit" onclick="bissection()" id="calculate">
+    Bissecção
+    </button>
+<button class="button-calculate" type="submit" onclick="false_position()" id="calculate">
+    Falsa-posição
+    </button>
+<button class="button-calculate" type="submit" onclick="secant()" id="calculate">
+        Secante
+        </button>
+<br>
+<br>
+<div class="result" id="result"> </div>
+</body>
+
+
+
+
+</html>

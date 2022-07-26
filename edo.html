@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="script.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body class="body"></body>
+
+<a href="index.html">
+    <h1>
+        <button class="button-calculate" role="button">Métodos de Equações Diferenciais</button>
+    </h1>
+</a>
+<p1 class="description">
+    Em matemática e ciência computacional, o método de Euler, cujo nome relaciona-se com Leonhard Euler, é um procedimento numérico de primeira ordem para solucionar equações diferenciais ordinárias com um valor inicial dado. É o tipo mais básico de método
+    explícito para integração numérica para equações diferenciais ordinárias.
+</p1>
+<p class="h2">
+    PS: Insira números racionais com . ao invés de , por exemplo: 4.2 .
+</p>
+<div class="container-euler">
+    <form method="POST" id="inputField" role="form">
+        <label>Valor inicial de X: </label><input type="text" id="x" value="" placeholder="">
+        <label>Valor inicial de Y: </label><input type="text" id="y" value="" placeholder="">
+        <label>Tamanho do passo: </label><input type="text" id="passo" value="" placeholder="">
+        <label>Valor final de X:</label><input type="text" id="final_x" value="" placeholder="">
+        <br>
+        <p class="h2">Insira os coeficientes da solução geral da EDO linear: A*y + b:</p>
+        <label>Valor de A:</label><input type="text" id="valor_a" value="" placeholder="">
+        <label>Valor de b:</label><input type="text" id="valor_b" value="" placeholder="">
+
+    </form>
+</div>
+<br>
+<button class="button-calculate" type="button" onclick="euler()" id="calculate">
+    Euler
+    </button>
+
+<button class="button-calculate" type="button" onclick="range2()" id="calculate">
+        Range-Kutta 2
+        </button>
+<button class="button-calculate" type="button" onclick="range4()" id="calculate">
+            Range-Kutta 4
+            </button>
+<br>
+<br>
+<div class="result" id="result"> </div>
+</body>
+
+
+
+
+</html>
