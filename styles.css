@@ -1,22 +1,24 @@
 /* CSS */
 
 .body {
-    background-color: rgb(21, 3, 42);
+    background-color: #15032a;
     text-align: center;
     margin: 2rem auto;
 }
 
 .header {
-    text-align: center;
+    text-align: left;
     font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 23px;
+    margin: 1rem;
     color: white;
 }
 
 .description {
-    text-align: center;
+    text-align: left;
     font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 16px;
+    margin: 1rem;
     color: white;
 }
 
@@ -81,6 +83,11 @@ input {
     text-align: center;
 }
 
+.container-pvc {
+    display: flex;
+    margin-left: 20rem;
+}
+
 .container-raiz {
     text-align: center;
 }
@@ -91,11 +98,19 @@ input {
     align-items: center;
 }
 
+.h3-size {
+    font-size: 35px;
+}
+
+.h1-size {
+    font-size: 28px;
+}
+
 .button-choose {
     width: 300px;
     margin: 10px;
-    display: flex;
     align-items: center;
+    display: flex;
     background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
     border-radius: 8px;
     border-style: none;
@@ -115,6 +130,21 @@ input {
     touch-action: manipulation;
 }
 
+.gradient2 {
+    background-image: linear-gradient(92.88deg, #6537a0 9.16%, #6e29bd 43.89%, #7123b9 64.72%);
+}
+
+.gradient3 {
+    background-image: linear-gradient(92.88deg, #400e81 9.16%, #260385 43.89%, #5f08b1 64.72%);
+    text-align: center;
+}
+
+.center-btn {
+    text-align: center;
+    margin-left: auto;
+    margin-left: 1.2rem;
+}
+
 .button-choose:hover {
     text-decoration: none;
     box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
@@ -128,6 +158,7 @@ input {
 
 @media (min-width: 768px) {
     .button-choose {
+        text-align: center;
         padding: 0 2.6rem;
     }
 }

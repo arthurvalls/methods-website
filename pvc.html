@@ -18,16 +18,18 @@
     </h1>
 </a>
 <p1 class="description">
-    O método de Jacobi é um algoritmo para resolver sistemas de equações lineares. Trata-se de uma versão simplificada do algoritmo de valores próprios de Jacobi. O método tem o nome do matemático Alemão Carl Gustav Jakob Jacobi. O método iterativo de Jacobi
-    é um método clássico que data do final do século XVIII. Técnicas iterativas são raramente utilizadas para solucionar sistemas lineares de pequenas dimensões, já que o tempo requerido para obter um mínimo de precisão ultrapassa o requerido pelas técnicas
-    diretas como a eliminação gaussiana. Contudo, para sistemas grandes, com grande porcentagem de entradas de zero (sistemas esparsos), essas técnicas aparecem como alternativas mais eficientes. Sistemas esparsos de grande porte frequentemente surgem
-    na análise de circuitos, na solução numérica de problemas de valor de limite e equações diferenciais parciais.
+    Soluciona Problemas de Valor de Contorno a partir dos Métodos de Gauss-Jacobi e Gauss-Seidel.
+    <br><br>PROBLEMA DE VALOR DE CONTORNO se refere a um sistema de equações diferenciais que possuem um conjunto de restrições adicionais, denominadas por condições de contorno.<br> Para solucionar este problema é necessário resolver o sistema linear
+    de equações diferenciais que satisfaz as condições de contorno
+
 </p1>
 <p class="h2">
-    PS: Insira números racionais com . ao invés de , por exemplo: 4.2 .
+
+    PS: Insira números racionais com . ao invés de , por exemplo: 4.2 .<br><br> Para utilizar a calculadora, basta fornecer as seguintes informações:
+
 </p>
-<div class="container">
-    <label> Matriz: 
+<div class="container-pvc">
+    <label> Matriz A: 
     <form method="POST" id="inputField" role="form">
         <input type="text" id="matrix00" value="" placeholder="A[0][0]"> 
         <input type="text" id="matrix01" value="" placeholder="A[0][1]">
@@ -43,7 +45,7 @@
         <br>
       </form>
       </label>
-    <label> Vetor: 
+    <label> Vetor b: 
         <form id="inputField" role="form">
             <input type="text" id="array00" value="" placeholder="b[0][0]">
             <input type="text" id="array01" value="" placeholder="b[0][1]">
@@ -51,7 +53,7 @@
             <br>
         </form>
     </label>
-    <label> Número de iterações: 
+    <label> Número de iterações (n): 
         <form id="inputField" role="form" onsubmit="return false">
             <input type="text" id="iter" value="">
             <!-- <input type="text" id="array01" value="" placeholder="b[0][1]"> -->
@@ -60,8 +62,9 @@
     </label>
 </div>
 
+<br>
 <button class="button-calculate" type="button" onclick="jacobi()" id="calculate">
-    Gauss-Jacobi
+    Jacobi
     </button>
 <button class="button-calculate" type="button" onclick="seidel()" id="calculate">
         Gauss-Seidel
@@ -69,6 +72,27 @@
 <br>
 <br>
 <div class="result" id="result"> </div>
+<p class="h1 h3-size"><br>Descrição dos métodos <br></p>
+<p class="header h1-size">
+    <br>Método de Jacobi
+</p>
+<p class="description">
+    Nomeado em homenagem ao seu criador, o matemático alemão Carl Gustav Jakob Jacobi, que fez contribuições fundamentais para funções elípticas, dinâmica, equações diferenciais e teoria dos números e teve suma importância para o renascimento da matemática
+    em universidades alemãs. <br><br>O Método de Jacobi é utilizado para resolver sistemas de equações lineares utilizando o Problema de Valor de Contorno de maneira que dada uma Matriz quadrada de n equações lineares Ax = B, resolve-se de maneira
+    iterativa utilizando a seguinte fórmula:<br><br>
+    <img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq10.png">
+</p>
+<p class="header h1-size">
+    <br>Método de Gauss-Seidel
+</p>
+<p class="description">Nomeado em homenagem ao seu criador, o matemático alemão Philipp Ludwig von Seidel, que resolveu problemas sobre sistemas de equações lineares que derivaram dos seus estudos sobre o trabalho de Carl Friedrich Gauss, relacionado a mínimos quadrados.<br>    <br> O Método de Gauss-Seidel é utilizado para resolver sistemas de equações lineares utilizando o Problema de Valor de Contorno de maneira semelhante ao método de Jacobi, é considerado como uma atualização ao método antigo.<br> A iteração de Gauss
+    Seidel é feita utilizando a seguinte fórmula:<br><br>
+    <img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq11.png"><br><br> De forma que A = D + L + U. Com as Matrizes D, L e U representando respectivamente a Diagonal, a Triangular Inferior e a Triangular Superior da matriz A.<br> Também é dito como
+    método da Fatoração L.U.<br><br> Logo, colocando este método de forma iterativa, obtemos:<br><br>
+    <img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq12.png"><br><br>
+
+</p>
+
 </body>
 
 

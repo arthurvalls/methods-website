@@ -18,18 +18,18 @@
     </h1>
 </a>
 <p1 class="description">
-    O método de Gauss-Seidel é um método iterativo para resolução de sistemas de equações lineares. O seu nome é uma homenagem aos matemáticos alemães Carl Friedrich Gauss e Philipp Ludwig von Seidel. É semelhante ao método de Jacobi (e como tal, obedece
-    ao mesmo critério de convergência). É condição suficiente de convergência que a matriz seja estritamente diagonal dominante, i. e., fica garantida a convergência da sucessão de valores gerados para a solução exacta do sistema linear.
+    Encontra a raíz de uma função a partir dos Métodos de Bisseção, Falsa-posição e Secantes.<br><br>RAÍZ DE UMA FUNÇÃO se refere ao valor de x no momento em que a função toma o valor 0.<br>
 </p1>
 <p class="h2">
-    PS: Insira números racionais com . ao invés de , por exemplo: 4.2 .
-    <br> PS2: Se deseja utilizar uma equação de primeiro grau, insira 0 no valor de A.
+    <br>PS: Insira números racionais com . ao invés de , por exemplo: 4.2 .
+    <br>PS2: Se deseja utilizar uma equação de segundo grau, insira 0 no valor de A.
+    <br><br> Para utilizar a calculadora, basta fornecer as seguintes informações:
 </p>
 <div class="container-raiz">
-    <label> Intervalos: 
+    <label> Intervalo de estimativas: 
     <form method="POST" id="inputField" role="form" onsubmit = "handleSubmit()">
-        <input type="text" id="intervalo1" value="" placeholder=""> 
-        <input type="text" id="intervalo2" value="" placeholder="">
+        <input type="text" id="intervalo1" value="" placeholder="estimativa inicial"> 
+        <input type="text" id="intervalo2" value="" placeholder="estimativa final">
         
         <br>
       </form>
@@ -52,12 +52,39 @@
     Falsa-posição
     </button>
 <button class="button-calculate" type="submit" onclick="secant()" id="calculate">
-        Secante
+        Secantes
         </button>
 <br>
 <br>
 <div class="result" id="result"> </div>
-</body>
+
+<p class="h1 h3-size"><br>Descrição dos métodos <br></p>
+<p class="header h1-size">
+    <br>Método da Bissecção
+</p>
+<p class="description">
+    O Método da Bissecção busca a raiz de uma função, dado um determinado intervalo, de maneira que é encontrado o ponto médio deste intervalo de valores e comparado com as duas extremidades para buscar em qual a raíz está localizada.<br> Esse método
+    é extremamente simples porém é bem mais lento em comparação a seus “competidores”. <br><br> Sua fórmula iterativa é demonstrada por:<br>
+    <br> <img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq7.png">
+</p>
+<p class="header h1-size">
+    <br>Método da Falsa-posição
+</p>
+<p class="description">
+    O Método da Falsa-Posição busca a raiz de uma função, dado um determinado intervalo, de maneira que se inicia com um intervalo inicial [a,b], sabendo que f(a) e f(b) possuem sinais opostos.<br> Assim, utilizando o Teorema do Valor Intermediário realiza-se
+    a equação desse método.<br><br>Sua fórmula iterativa é demonstrada por:<br><br>
+    <img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq8.png"><br><br> Após isso, atualiza-se o valor de A para encontrar um valor mais próximo da raiz.<br>
+</p>
+<p class="header h1-size">
+    <br>Método das Secantes
+    <p class="description">
+        O Método das Secantes busca a raiz de uma função, dado um determinado intervalo, de maneira que utiliza-se uma relação de recorrência, onde, a partir de 2 valores iniciais é realizada a equação desse método.<br><br> Sua fórmula iterativa é demonstrada
+        por:
+        <br><br>
+        <img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq9.png"><br><br>
+    </p>
+    </body>
+
 
 
 

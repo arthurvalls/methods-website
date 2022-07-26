@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="script.js" defer></script>
+    <title>Métodos de PVI</title>
+</head>
+
+<body class="body"></body>
+
+<a href="index.html">
+    <h1>
+        <button class="button-calculate" role="button">Métodos de Problema de Valor Inicial</button>
+    </h1>
+</a>
+<p1 class="description">
+    Soluciona Problemas de Valor Inicial em Equações Diferenciais Ordinárias (EDO), a partir dos Métodos de Euler, Runge-Kutta 2 e Runge-Kutta 4.<br><br>EQUAÇÃO DIFERENCIAL ORDINÁRIA se refere a uma equação na qual não conhecemos sua estrutura porém possuímos
+    uma de suas derivadas.<br> PROBLEMA DE VALOR INICIAL se refere a uma EDO, na qual possuímos um resultado para um y inicial (y0).
+
+</p1>
+
+<p class="h2">
+    <br>PS: Insira números racionais com . ao invés de , por exemplo: 4.2 . <br><br>Para utilizar a calculadora, basta fornecer as seguintes informações:<br>
+</p>
+<div class="container-euler">
+    <form method="POST" id="inputField" role="form">
+        <label>Valor inicial de X: </label><input type="text" id="x" value="" placeholder="">
+        <label>Valor inicial de Y: </label><input type="text" id="y" value="" placeholder="">
+        <label>Tamanho do passo (h): </label><input type="text" id="passo" value="" placeholder="">
+        <label>Valor final de X:</label><input type="text" id="final_x" value="" placeholder="">
+        <br>
+        <p class="h2">Insira os coeficientes da solução geral da EDO linear: A*y + b:</p>
+        <label>Valor de A do polinômio:</label><input type="text" id="valor_a" value="" placeholder="">
+        <label>Valor de b do polinômio</label><input type="text" id="valor_b" value="" placeholder="">
+
+    </form>
+</div>
+<br>
+<button class="button-calculate" type="button" onclick="euler()" id="calculate">
+    Euler
+</button>
+
+<button class="button-calculate" type="button" onclick="range2()" id="calculate">
+    Range-Kutta 2
+</button>
+<button class="button-calculate" type="button" onclick="range4()" id="calculate">
+    Range-Kutta 4
+</button>
+<br>
+<br>
+<div class="result" id="result"> </div>
+<p class="h1 h3-size"><br>Descrição dos métodos <br></p>
+<p class="header h1-size">
+    <br>Método de Euler
+</p>
+<p class="description">
+    Nomeado em homenagem ao seu criador, o matemático e físico suíço Leonhard Paul Euler, o primeiro matemático a apresentar ao público o uso dos métodos de diferenças elementares para encontrar aproximações de soluções de equações diferenciais.<br><br>    O Método de Euler busca atualizar os valores de x e y utilizando o passo h, a partir de aproximações de y. <br><br>A forma como é feita pode ser observada a seguir:<br><br>Sendo y' uma EDO que recebe x e y :<br><br>
+    <img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq1.png">
+    <br><br> Primeiramente o método atualiza o valor de x de acordo com o passo:<br><br> <img src=C:\Users\arthu\Desktop\calcnumtest\templates\eq2.png> <br><br>Utilizando o valor de h e da função de x e y anteriores, já conhecidos, o método atualiza o
+    valor de y:<br><br> <img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq3.png">
+    <br><br>A partir disso o método retorna o valor da função y' sem realmente conhecer a sua equação.
+
+</p>
+<p class="header h1-size">
+    <br>Método de Runge-Kutta
+</p>
+<p class="description">Nomeado em homenagem aos seus criadores, os matemáticos Carl David Tolmé Runge e Martin Wilhelm Kutta, matemáticos alemães. Com base nos métodos de Runge (utilizados para encontrar uma aproximação da solução dos problemas de valor inicial), Kutta os generalizou
+    para incorporar sistemas de equações diferenciais de primeira ordem.
+</p>
+<p class="header "><br>Runge-Kutta 2</p>
+
+<p class="description">O Método de Runge-Kutta 2 (RK2) busca atualizar os valores de x e y utilizando o passo h, a partir de aproximações de y.<br><br>A forma como é feita pode ser observada a seguir:<br><br>Sendo y' uma EDO que recebe x e y :
+    <br><br><img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq1.png">
+    <br><br>Primeiramente o método atualiza o valor de x de acordo com o passo:<br><br>
+    <img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq2.png"><br><br> Utilizando o valor de h e da função de x e y anteriores, já conhecidos, o método atualiza o valor de y:
+    <br><br><img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq5.png">
+    <br><br>A partir disso o método retorna o valor da função y' sem realmente conhecer a sua equação.
+
+</p>
+<p class="header "><br>Runge-Kutta 4</p>
+
+<p class="description">O Método de Runge-Kutta 4 (RK4) busca atualizar os valores de x e y utilizando o passo h, a partir de aproximações de y. <br><br>A forma como é feita pode ser observada a seguir:<br><br>Sendo y' uma EDO que recebe x e y :
+    <br><br><img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq1.png">
+    <br><br>Primeiramente o método atualiza o valor de x de acordo com o passo:<br><br>
+    <img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq4.png"><br><br> Utilizando o valor de h e da função de x e y anteriores, já conhecidos, o método atualiza o valor de y:
+    <br><br><img src="C:\Users\arthu\Desktop\calcnumtest\templates\eq6.png">
+    <br><br>As variáveis K1, K2, K3 e K4 são utilizadas para facilitar a conta.<br><br> A partir disso o método retorna o valor da função y' sem realmente conhecer a sua equação.
+
+
+</p>
+</body>
+
+
+
+
+</html>
