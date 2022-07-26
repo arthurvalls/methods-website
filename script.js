@@ -163,7 +163,7 @@ function seidel() {
 
 
 
-function f(x, y) {
+function f1(x, y) {
     return parseFloat(document.getElementById('valor_a').value) * (y + (parseFloat(document.getElementById('valor_b').value)));
 
 }
@@ -183,7 +183,7 @@ function euler() {
         contador = contador + 1;
 
         x1 = x + h;
-        y1 = y + h * f(x, y);
+        y1 = y + h * f1(x, y);
         x = x1;
         y = y1;
 
@@ -208,7 +208,7 @@ function range2() {
         contador = contador + 1;
 
         x1 = x + h;
-        y1 = y + (h / 2) * (f(x, y) + f(x + h, y + h * (f(x, y))));
+        y1 = y + (h / 2) * (f1(x, y) + f1(x + h, y + h * (f1(x, y))));
         x = x1;
         y = y1;
 
@@ -238,10 +238,10 @@ function range4() {
         contador = contador + 1;
 
         x1 = x + h;
-        k1 = h * f(x, y);
-        k2 = h * f(x + (h / 2), y + (k1 / 2));
-        k3 = h * f(x + (h / 2), y + (k2 / 2));
-        k4 = h * f(x + h, y + k3);
+        k1 = h * f1(x, y);
+        k2 = h * f1(x + (h / 2), y + (k1 / 2));
+        k3 = h * f1(x + (h / 2), y + (k2 / 2));
+        k4 = h * f1(x + h, y + k3);
         y1 = y + (k1 + (2 * k2) + (2 * k3) + k4) / 6;
         x = x1;
         y = y1;
@@ -255,39 +255,47 @@ function range4() {
 }
 
 
-function f(x) {
-    return (2 * x) - 3;
-}
 
+
+function f(x) {
+    return ((a_f) * (x ** 2)) + ((b_f) * x) + (c_f)
+}
 
 
 
 
 function bissection() {
 
+    var a_f = parseFloat(document.getElementById('valor_a').value);
+    var b_f = parseFloat(document.getElementById('valor_b').value);
+    var c_f = parseFloat(document.getElementById('valor_c').value);
 
-    var a = parseFloat(document.getElementById('valor_a').value);
-    var b = parseFloat(document.getElementById('valor_b').value);
-    if (f(a) * f(b) >= 0) {
+    function f(x) {
+        return (a_f) * (x ** 2) + (b_f) * x + (c_f);
+    }
+
+    var intervalo1 = parseFloat(document.getElementById('intervalo1').value);
+    var intervalo2 = parseFloat(document.getElementById('intervalo2').value);
+    if (f(intervalo1) * f(intervalo2) >= 0) {
         document.getElementById('result').innerHTML = "Sinais não são opostos";
 
     }
     var contador = 0;
     var tolerancia = 0.00000001;
     var x = 0;
-    while ((b - a) / 2 >= tolerancia) {
+    while ((intervalo2 - intervalo1) / 2 >= tolerancia) {
         contador = contador + 1;
-        x = a + (b - a) / 2;
+        x = intervalo1 + (intervalo2 - intervalo1) / 2;
         if (f(x) == 0) {
-            document.getElementById('result').innerHTML = "Raiz exata = " + x;
+            document.getElementById('result').innerHTML = "Raiz exata encontrada em " + contador + " iterações por Bissecção = " + x;
             return 0;
         }
 
-        if (f(x) * f(a) > 0) {
-            a = x;
+        if (f(x) * f(intervalo1) > 0) {
+            intervalo1 = x;
 
         } else {
-            b = x;
+            intervalo2 = x;
         }
     }
 
@@ -297,27 +305,47 @@ function bissection() {
 
 function false_position() {
 
-    var a = parseFloat(document.getElementById('valor_a').value);
-    var b = parseFloat(document.getElementById('valor_b').value);
-    if (f(a) * f(b) >= 0) {
+    var a_f = parseFloat(document.getElementById('valor_a').value);
+    var b_f = parseFloat(document.getElementById('valor_b').value);
+    var c_f = parseFloat(document.getElementById('valor_c').value);
+
+    function f(x) {
+        return (a_f) * (x ** 2) + (b_f) * x + (c_f);
+    }
+
+		
+    var intervalo1 = parseFloat(document.getElementById('intervalo1').value);
+    var intervalo2 = parseFloat(document.getElementById('intervalo2').value);
+    
+    console.log(intervalo1);
+    console.log(intervalo2);
+    
+    var x = 0;
+    if (f(intervalo1) * f(intervalo2) >= 0) {
         document.getElementById('result').innerHTML = "Sinais não são opostos";
 
     }
     var contador = 0;
     var tolerancia = 0.01;
-    var x = 0;
-    while ((b - a) >= tolerancia) {
-        x = a - f(a) * (b - a) / (f(b) - f(a));
+    console.log(f(x));
+    while ((intervalo2 - intervalo1) >= tolerancia) {
+        x = intervalo1 - f(intervalo1) * (intervalo2 - intervalo1) / (f(intervalo2) - f(intervalo1));
+        console.log(f(intervalo2)-f(intervalo1));
+        
+        console.log(f(intervalo1));
+        console.log(x);
+        console.log(f(x));
         contador = contador + 1;
         if (f(x) == 0) {
-            document.getElementById('result').innerHTML = "Raiz exata = " + x;
+            document.getElementById('result').innerHTML = "Raiz exata encontrada em " + contador + " iterações por Falsa-Posição = " + x;
             return 0;
         }
-        if (f(x) * f(a) > 0) {
-            a = x;
+        x = intervalo1 - f(intervalo1) * (intervalo2 - intervalo1) / (f(intervalo2) - f(intervalo1));
+        if (f(x) * f(intervalo1) > 0) {
+            intervalo1 = x;
 
         } else {
-            b = x;
+            intervalo2 = x;
         }
         if (Math.abs(f(x)) < tolerancia) {
             break;
@@ -329,23 +357,32 @@ function false_position() {
 
 function secant() {
 
-    var a = parseFloat(document.getElementById('valor_a').value);
-    var b = parseFloat(document.getElementById('valor_b').value);
-    if (f(a) * f(b) >= 0) {
+
+    var a_f = parseFloat(document.getElementById('valor_a').value);
+    var b_f = parseFloat(document.getElementById('valor_b').value);
+    var c_f = parseFloat(document.getElementById('valor_c').value);
+
+    function f(x) {
+        return (a_f) * (x ** 2) + (b_f) * x + (c_f);
+    }
+
+    var intervalo1 = parseFloat(document.getElementById('intervalo1').value);
+    var intervalo2 = parseFloat(document.getElementById('intervalo2').value);
+    if (f(intervalo1) * f(intervalo2) >= 0) {
         document.getElementById('result').innerHTML = "Sinais não são opostos";
 
     }
     var contador = 0;
     var tolerancia = 0.0001;
     var x = 0;
-    while ((b - a) >= tolerancia) {
-        x = a - f(a) * (b - a) / (f(b) - f(a));
+    while ((intervalo2 - intervalo1) >= tolerancia) {
+        x = intervalo1 - f(intervalo1) * (intervalo2 - intervalo1) / (f(intervalo2) - f(intervalo1));
         contador = contador + 1;
         if (f(x) == 0) {
-            document.getElementById('result').innerHTML = "Raiz exata = " + x;
+            document.getElementById('result').innerHTML = "Raiz exata encontrada em " + contador + " iterações por Secante = " + x;
             return 0;
         } else {
-            b = x;
+            intervalo2 = x;
         }
         if (Math.abs(f(x)) < tolerancia) {
             break;
