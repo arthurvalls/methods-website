@@ -313,13 +313,12 @@ function false_position() {
         return (a_f) * (x ** 2) + (b_f) * x + (c_f);
     }
 
-		
+
     var intervalo1 = parseFloat(document.getElementById('intervalo1').value);
     var intervalo2 = parseFloat(document.getElementById('intervalo2').value);
-    
-    console.log(intervalo1);
-    console.log(intervalo2);
-    
+
+
+
     var x = 0;
     if (f(intervalo1) * f(intervalo2) >= 0) {
         document.getElementById('result').innerHTML = "Sinais não são opostos";
@@ -327,14 +326,10 @@ function false_position() {
     }
     var contador = 0;
     var tolerancia = 0.01;
-    console.log(f(x));
+
     while ((intervalo2 - intervalo1) >= tolerancia) {
         x = intervalo1 - f(intervalo1) * (intervalo2 - intervalo1) / (f(intervalo2) - f(intervalo1));
-        console.log(f(intervalo2)-f(intervalo1));
-        
-        console.log(f(intervalo1));
-        console.log(x);
-        console.log(f(x));
+
         contador = contador + 1;
         if (f(x) == 0) {
             document.getElementById('result').innerHTML = "Raiz exata encontrada em " + contador + " iterações por Falsa-Posição = " + x;
