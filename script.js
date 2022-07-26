@@ -163,8 +163,8 @@ function seidel() {
 
 
 
-function f(x, y) {
-    return parseFloat(document.getElementById('intervalo1').value) * (y + (parseFloat(document.getElementById('valor_b').value)));
+function f1(x, y) {
+    return parseFloat(document.getElementById('valor_a').value) * (y + (parseFloat(document.getElementById('valor_b').value)));
 
 }
 
@@ -183,7 +183,7 @@ function euler() {
         contador = contador + 1;
 
         x1 = x + h;
-        y1 = y + h * f(x, y);
+        y1 = y + h * f1(x, y);
         x = x1;
         y = y1;
 
@@ -208,7 +208,7 @@ function range2() {
         contador = contador + 1;
 
         x1 = x + h;
-        y1 = y + (h / 2) * (f(x, y) + f(x + h, y + h * (f(x, y))));
+        y1 = y + (h / 2) * (f1(x, y) + f1(x + h, y + h * (f1(x, y))));
         x = x1;
         y = y1;
 
@@ -238,10 +238,10 @@ function range4() {
         contador = contador + 1;
 
         x1 = x + h;
-        k1 = h * f(x, y);
-        k2 = h * f(x + (h / 2), y + (k1 / 2));
-        k3 = h * f(x + (h / 2), y + (k2 / 2));
-        k4 = h * f(x + h, y + k3);
+        k1 = h * f1(x, y);
+        k2 = h * f1(x + (h / 2), y + (k1 / 2));
+        k3 = h * f1(x + (h / 2), y + (k2 / 2));
+        k4 = h * f1(x + h, y + k3);
         y1 = y + (k1 + (2 * k2) + (2 * k3) + k4) / 6;
         x = x1;
         y = y1;
