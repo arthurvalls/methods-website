@@ -96,10 +96,18 @@ input {
     text-align: center;
 }
 
+.label-euler {
+    display: inline-block;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+
 .container-pvc {
     display: flex;
     margin: auto;
     text-align: center;
+    justify-content: center;
 }
 
 .container-raiz {
