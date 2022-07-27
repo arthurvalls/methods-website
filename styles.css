@@ -76,7 +76,7 @@ label {
 input {
     height: 20px;
     flex: 0 0 200px;
-    margin-left: 10px;
+    margin-left: auto;
     display: inline-block;
     width: 150px;
 }
@@ -100,7 +100,7 @@ input {
     display: inline-block;
     clear: left;
     width: 250px;
-    text-align: right;
+    text-align: center;
 }
 
 .container-pvc {
